@@ -3,9 +3,9 @@ title: ''
 date: 2021-04-17T16:50:00-04:00
 
 ---
-Hi,
+Hello, my friend,
 
-This is Anirudh. I'm a software developer, husband, and a long-time Liverpool FC fan. 
+I'm Anirudh. I'm a software developer, husband, and a long-time Liverpool FC fan. 
 
 The purpose of this blog is to build on things I've already discovered.
 
@@ -13,6 +13,6 @@ I realize I don't have a great memory, nor do I have the time to recreate everyt
 
 I want to create something of long-lasting value.
 
-Thanks for reading. You can find me on Twitter - anirudhonezero.
+Thanks for reading along. You can find me [@anirudhonezero](https://twitter.com/AnirudhOneZero).
 
 Anirudh
