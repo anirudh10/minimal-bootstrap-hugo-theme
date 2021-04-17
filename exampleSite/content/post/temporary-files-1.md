@@ -1,7 +1,6 @@
 +++
 aliases = []
 date = 2021-04-17T22:59:51Z
-draft = true
 lastmod = 2021-04-17T22:59:00Z
 publishdate = 2021-04-17T22:59:00Z
 tags = ["java", "temporary", "files"]
