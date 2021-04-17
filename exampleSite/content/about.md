@@ -1,29 +1,18 @@
 ---
 title: About
-date: 2014-04-09
+date: 2021-04-17T16:50:00-04:00
 
 ---
-## This Theme
+Hi,
 
-Thanks for visiting this theme demo. If you're interested, checkout my other stuff over at [https://zwbetz.com](https://zwbetz.com)
+This is Anirudh. I'm a software developer, husband, and a long-time Liverpool FC fan. 
 
-## Hugo
+The purpose of this blog is to build on things I've already discovered.
 
-Hugo is the **world’s fastest framework for building websites**. It is written in Go.
+I realize I don't have a great memory, nor do I have the time to recreate everything from scratch, hence I intend to write for myself and others.
 
-It makes use of a variety of open source projects including:
+I want to create something of long-lasting value.
 
-* https://github.com/russross/blackfriday
-* https://github.com/alecthomas/chroma
-* https://github.com/muesli/smartcrop
-* https://github.com/spf13/cobra
-* https://github.com/spf13/viper
-* https://github.com
+Thanks for reading. You can find me on Twitter - anirudhonezero.
 
-Learn more and contribute on [GitHub](https://github.com/gohugoio).
-
-***
-
-<small>
-_Favicon made by_ [_Freepik_](https://www.freepik.com/)_, from_ [_Flaticon_](https://www.flaticon.com/)_, licensed by_ [_CC 3.0_](http://creativecommons.org/licenses/by/3.0/)_._
-</small>
+Anirudh
