@@ -1,69 +1,46 @@
 ---
-title: Use Snap to install the Hugo edge version on Fedora and Ubuntu
-date: 2018-10-26T12:59:51.000-05:00
-publishdate: 2018-10-26
-lastmod: 2018-10-26
+title: Temporary Files 1
+date: 2021-04-17T18:59:51-04:00
+publishdate: 2021-04-17T18:59:00-04:00
+lastmod: 2021-04-17T18:59:00-04:00
 aliases:
-- "/use-snap-to-install-the-hugo-edge-version-on-fedora/"
+- "/temporary-files-1"
 tags:
-- hugo
-- snap
-- fedora
-- ubuntu
+- java
+- temporary
+- files
 
 ---
-If you are using the Fedora or Ubuntu Linux distributions -- I'm currently on Fedora 28 -- and would like to [help test the latest development version of Hugo](https://discourse.gohugo.io/t/help-test-upcoming-hugo-0-50/14880), or if you just want to be on the bleeding-edge of things, this post is for you.
 
-## Fedora-only steps
+## Use Case
 
-To get started, [install Snap on Fedora](https://docs.snapcraft.io/installing-snap-on-fedora/6755):
+Suppose your manager tells you - "Yo Sadio, write me a tool that takes a URL and uploads its content to s3."
 
-    sudo dnf install snapd
+## Thinking Process
 
-Add the [Snap directory](https://docs.snapcraft.io/commands-and-aliases/3950) to your `PATH` by adding this line to your `~/.bashrc` file. Then restart your terminal to pick up the change:
+Well, he doesn't care where you download it, how you upload it, or what you do with the content later on. 
 
-    export PATH="$PATH:/var/lib/snapd/snap/bin"
+## You need to
 
-## Ubuntu-only steps
+1. Create a temporary file.
+2. Download the URL contents to it.
+3. Delete the file.
 
-Ubuntu 16.04 and above come with [Snap already installed](https://docs.snapcraft.io/installing-snap-on-ubuntu/6740). If you're using an older Ubuntu version, install Snap by running:
+    // 0. setup
+    File file = File.createTempFile("prefix", null);
+    
+    String urlString = "https://gist.github.com/myusuf3/7f645819ded92bda6677";
+    URL url = new URL(urlString);
+    
+    // 1. download to local
+    FileUtils.copyURLToFile(url, file);
+    System.out.println(file.getName());
+    
+    // 2. upload to s3
+    PutObjectRequest por = new PutObjectRequest(BUCKET_NAME, file.getName(), file);
+    amazonS3Client.putObject(por);
+    
+    // 3. delete the file
+    System.out.println(file.delete());
 
-    sudo apt update && sudo apt install snapd
-
-Check if the Snap directory is on your `PATH` by listing each entry:
-
-    echo $PATH | tr ':' '\n'
-
-If you don't see `/snap/bin` listed, then add this line to your `~/.bashrc` file. Then restart your terminal to pick up the change:
-
-    export PATH="$PATH:/snap/bin"
-
-## Install Hugo
-
-See which Snap channels are available for Hugo:
-
-    snap info hugo
-
-Install Hugo from the edge channel:
-
-    sudo snap install hugo --channel=edge
-
-Or, if you prefer Hugo Extended -- which has the [Hugo Pipes](https://gohugo.io/hugo-pipes/) feature -- install it from the extended edge channel:
-
-    sudo snap install hugo --channel=extended/edge
-
-Lastly, confirm the location and version of Hugo that was intalled:
-
-    which hugo && hugo version
-
-Happy testing :)
-
-## Update or remove Hugo
-
-Snaps are [updated automatically](https://docs.snapcraft.io/keeping-snaps-up-to-date/7022). To manually update Hugo:
-
-    sudo snap refresh hugo
-
-To remove Hugo:
-
-    sudo snap remove hugo
+Happy deleting :)
