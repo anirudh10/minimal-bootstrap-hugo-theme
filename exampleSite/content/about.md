@@ -1,10 +1,8 @@
 ---
-title: Hello My Friend
+title: Hello, my friend
 date: 2021-04-17T16:50:00-04:00
 
 ---
-Hello, my friend,
-
 I'm Anirudh. I'm a software developer, husband, and a long-time Liverpool FC fan. 
 
 The purpose of this blog is to build on things I've already discovered.
