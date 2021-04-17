@@ -23,22 +23,21 @@ Well, he doesn't care where you download it, how you upload it, or what you do w
 
 ## Code
 
-// 0. setup
+    // 0. setup
+    File file = File.createTempFile("prefix", null);
+    
+    String urlString = "https://gist.github.com/myusuf3/7f645819ded92bda6677";
+    URL url = new URL(urlString);
+    
+    // 1. download to local
+    FileUtils.copyURLToFile(url, file);
+    System.out.println(file.getName());
+    
+    // 2. upload to s3
+    PutObjectRequest por = new PutObjectRequest(BUCKET_NAME, file.getName(), file);
+    amazonS3Client.putObject(por);
+    
+    // 3. delete the file
+    System.out.println(file.delete());
 
-File file = File.createTempFile("prefix", null);
-
-String urlString = "https://gist.github.com/myusuf3/7f645819ded92bda6677";
-URL url = new URL(urlString);
-
-// 1. download to local
-FileUtils.copyURLToFile(url, file);
-System.out.println(file.getName());
-
-// 2. upload to s3
-PutObjectRequest por = new PutObjectRequest(BUCKET_NAME, file.getName(), file);
-amazonS3Client.putObject(por);
-
-// 3. delete the file
-System.out.println(file.delete());
-
-Happy deleting :)
+That's it, there is temporary-files-2 that goes one step deeper.
