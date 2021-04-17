@@ -3,8 +3,7 @@ title: Temporary Files 1
 date: 2021-04-17T18:59:51-04:00
 publishdate: 2021-04-17T18:59:00-04:00
 lastmod: 2021-04-17T18:59:00-04:00
-aliases:
-- "/temporary-files-1"
+aliases: []
 tags:
 - java
 - temporary
