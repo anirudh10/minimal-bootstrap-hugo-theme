@@ -9,13 +9,13 @@ title = "Systemd"
 +++
 ## UseCase
 
-At work, you might have executed "sudo service some-service start" and your service magically starts. 
+At work, you might have executed "sudo service some-service start" and your service magically starts.
 
 How does that happen? There are two ways I know - systemd and init.d.
 
 Let's look at systemd.
 
-## Code
+## The How to
 
 1. Create an id-generator-service.service file that you'll provide to systemd.
 
