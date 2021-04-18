@@ -2,9 +2,6 @@
 label: Systemd
 hide_body: false
 fields:
-- type: list
-  name: aliases
-  label: aliases
 - type: datetime
   name: date
   label: date
@@ -17,6 +14,9 @@ fields:
 - type: list
   name: tags
   label: tags
+- type: list
+  name: aliases
+  label: aliases
 - type: text
   name: title
   label: title
