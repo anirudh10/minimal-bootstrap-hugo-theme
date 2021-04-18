@@ -20,3 +20,5 @@ fields:
 - type: text
   name: title
   label: title
+pages:
+- exampleSite/content/post/Systemd.md
