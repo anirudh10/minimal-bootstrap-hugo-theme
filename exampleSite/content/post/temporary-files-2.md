@@ -43,8 +43,8 @@ This version uses try-with-resources to delete it.
             FileUtils.copyURLToFile(url, tempFile.getFile());
     
             // 2. upload to s3
-            //PutObjectRequest por = new PutObjectRequest(BUCKET_NAME, file.getName(), file);
-            //amazonS3Client.putObject(por);
+            PutObjectRequest por = new PutObjectRequest(BUCKET_NAME, file.getName(), file);
+            amazonS3Client.putObject(por);
         }
     }
     
