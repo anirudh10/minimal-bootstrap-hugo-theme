@@ -11,7 +11,7 @@ Suppose your manager tells you - “Joe, do you remember where we store MaxMind 
 
 ## Thinking Process
 
-Wait, what is MaxMind? MaxMind is a company that provides location data given an IP. Something like 205.101.100.247 -> Istanbul. 
+Wait, what is MaxMind? MaxMind is a company that provides location data given an IP. Something like 205.101.100.247 -> Istanbul.
 
 Ok, need a code refresher now.
 
@@ -26,15 +26,15 @@ Ok, need a code refresher now.
                         }
                     });
 
-We have a cache (essentially a key-value map) that stores IP and its location. 
+We have a cache (essentially a key-value map) that stores IP and its location.
 
-After 5 minutes, the cache forgets the mapping. 
+After 5 minutes, the cache forgets the mapping.
 
 Coming back to "when did I see it last"? The obvious answer is whenever the cache forgets about it, right?
 
 ## What can I do about it?
 
-Wonder if this cache has a hook that is invoked when it forgets something? 
+Wonder if this cache has a hook that is invoked when it forgets something?
 
 It has built-in support for it - "removal listeners".
 
@@ -65,15 +65,13 @@ It has built-in support for it - "removal listeners".
     System.out.println(cache.get("205.101.100.247")); // -> Removal listener called since 205.101.100.247 with 26be9f3a_place EXPIRED
                                                       // -> and prints 14e3c237_place (totally random place again)
 
-The inline testing comments above should make the behavior of removal listener clear. 
+The inline testing comments above should make the behavior of removal listener clear.
 
-Let me know if it doesn't. I'm @anirudhonezero. 
+Let me know if it doesn't. I'm @anirudhonezero.
 
 Thanks for reading along.
 
 ## Gotchas
 
-1. Sometimes removal listener might not be called (implementation detail), this is because guava doesn't have clean-up threads. It relies on get, write to happen on the same segment of the expired key to happen. In our case, the last get call invokes the segment read and hence the removal listener. Reference - [https://stackoverflow.com/a/12157670](https://stackoverflow.com/a/12157670 "https://stackoverflow.com/a/12157670")
-
-
-2. The last print statement should return the same place in a production environment.
+1. The above hook does not get called always (implementation detail) because guava doesn't have its own clean-up threads. It relies on get/write to happen on the same segment of the expired key.
+2. The last get call invokes the segment read and the hook. [Ref]()
