@@ -65,7 +65,7 @@ It has built-in support for it - "removal listeners".
     System.out.println(cache.get("205.101.100.247")); // -> Removal listener called since 205.101.100.247 with 26be9f3a_place EXPIRED
                                                       // -> and prints 14e3c237_place (totally random place again)
 
-The inline testing comments above should make the behavior of removal listener clear.
+The inline testing comments above should make the behavior of the removal listener hook clear.
 
 Let me know if it doesn't. I'm @anirudhonezero.
 
