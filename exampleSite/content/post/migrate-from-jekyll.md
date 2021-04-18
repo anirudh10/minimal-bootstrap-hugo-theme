@@ -9,6 +9,7 @@ tags:
 - migration
 - git
 - templates
+draft: true
 
 ---
 ## Move static content to `static`
