@@ -16,4 +16,5 @@ fields:
   label: tags
 pages:
 - exampleSite/content/post/Systemd.md
+- exampleSite/content/post/last-seen.md
 - exampleSite/content/post/remote-debugging.md
