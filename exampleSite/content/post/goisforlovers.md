@@ -7,6 +7,7 @@ tags:
 - go
 - templates
 - hugo
+draft: true
 
 ---
 Hugo uses the excellent [Go][] [html/template][gohtmltemplate] library for
