@@ -1,12 +1,15 @@
 ---
-title: "Getting Started with Hugo"
-date: "2014-04-02"
-publishdate: "2014-04-02"
-lastmod: "2014-04-02"
-draft: false
-tags: ["hugo", "git", "fun"]
----
+title: Getting Started with Hugo
+date: 2014-04-02
+publishdate: 2014-04-02
+lastmod: 2014-04-02
+tags:
+- hugo
+- git
+- fun
+draft: true
 
+---
 ## Step 1. Install Hugo
 
 Go to [Hugo releases](https://github.com/spf13/hugo/releases) and download the
