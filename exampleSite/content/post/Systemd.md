@@ -1,7 +1,6 @@
 +++
 aliases = []
 date = "2021-04-18T09:00:00-04:00"
-draft = true
 lastmod = 2021-04-18T13:00:00Z
 publishdate = 2021-04-18T13:00:00Z
 tags = ["systemd", "devops"]
